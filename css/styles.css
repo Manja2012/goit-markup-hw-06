@@ -747,6 +747,7 @@
        fill: var(--text-color);
    }
    .modal-button{
+    position: absolute;
     display: flex; 
     align-items: center;
     justify-content: center;
@@ -786,18 +787,25 @@
     color: var(--text-contacts-color);
    }
    .form-input{
+    padding-left: 42px ;
     width: 100%;
     height: 40px;
 
     border: 1px solid var(--input-coor);
     border-radius: 4px;
     color: var(--text-color);
+    cursor: pointer;
 
     transition:border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
    }
    .form-input:hover,
    .form-input:focus{
     border: 1px solid var(--accent-color);
+    outline: 1px solid var(--accent-color);
+   }
+   .form-input:hover +.input-icon,
+   .form-input:focus +.input-icon{
     fill: var(--accent-color);
    }
    .input-icon{
@@ -809,30 +817,72 @@
        width: 18px;
        height: 18px;
        fill:currentColor;
+
+       transition:fill 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
    }
    .contact-comment{
        width: 100%;
        height: 120px;
        padding: 16px 12px ;
+
        resize: none;
        border: 1px solid rgba(33, 33, 33, 0.2);
        border-radius: 4px;
-   }.form-rights{
+       cursor: pointer;
+
+       transition:border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+       outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   }
+   .contact-comment:hover,
+   .contact-comment:focus{
+       border: 1px solid var(--accent-color);
+       outline: 1px solid var(--accent-color);
+   }
+   .form-rights{
        margin-top: 25px;
    }
    .form-rights-label{
-    font-size: 14px;
-    line-height: 24px;
-    letter-spacing: 0.03em;
+       display: flex;
+       align-items: center;
+
+       font-size: 14px;
+       line-height: 24px;
+       letter-spacing: 0.03em;
     
-    color:var(--text-contacts-color);
+       color:var(--text-contacts-color);
    }
    .modal-link{
        color: var(--accent-color);
+   }
+   .checkbox{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+   }
+   .checkbox-rights-icon{
+       display: inline-block;
+       margin-right: 9px;
+       width: 16px;
+       height: 15px;
+       border: 2px solid var(--text-color);
+       border-radius: 4px;
+   }
+   .checkbox:checked + .checkbox-rights-icon{
+       border-color: var(--accent-color);
+       background-color: var(--accent-color);
+       background-image: url(../images/icon\ check\ \(1\).svg);
+       background-size: contain;
+       background-origin: border-box;
    }
    .send-button{
        display: block;
        margin:25px auto 71px auto;
    }
+
 
   
